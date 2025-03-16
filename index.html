@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title></title>
+    <!--css -->
     <link rel="stylesheet" href="css/style.css" />
     <meta name="description" content="" />
 
@@ -22,12 +23,32 @@
   </head>
 
   <body>
-    <!-- Add your site or application content here -->
-    <div class="proba">
-      <button id="Change">ClickMe</button>
-      <p id="count">0</p>
-    </div>
-
-    <script src="js/app.js"></script>
+    <header class="header">
+      <nav class="logo">
+        <div class="logo">
+          <a href="index.html">
+            <img src="" alt="ManevArtLogo" />
+          </a>
+        </div>
+        <div class="nav-toggle" id="navToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="portraits.html" class="nav-link">Portraits</a></li>
+          <li><a href="landscapes.html" class="nav-link">Landscapes</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li>
+            <a href="cart.html" class="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </li>
+          <li><a href="login.html" class="login-btn">Login</a></li>
+        </ul>
+      </nav>
+    </header>
   </body>
 </html>
