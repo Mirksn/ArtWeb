@@ -37,6 +37,18 @@ body {
   align-items: center;
   padding: 15px 5%;
 }
+.header-right {
+  display: flex;
+  align-items: center;
+}
+.cart {
+  margin-right: 20px;
+  position: relative;
+}
+.cart i {
+  font-size: 1.2rem;
+  display: inline-block !important;
+}
 .dropdown {
   position: relative;
   display: inline-block;
@@ -216,8 +228,14 @@ p {
 .footer-section2 {
   list-style: none;
   grid-column: 2;
+  color: white;
 }
-
+.footer-section2 a {
+  list-style: none;
+  grid-column: 2;
+  color: white;
+  margin-left: 1em;
+}
 .footer-bottom {
   grid-column: span 2; /* Takes both columns */
   grid-row: 2;
