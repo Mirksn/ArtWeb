@@ -4,8 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title></title>
-    <!--css -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- So we can use fas fa icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <meta name="description" content="" />
 
     <meta property="og:title" content="" />
@@ -23,73 +27,62 @@
   </head>
 
   <body>
+    <!-- Header Section -->
     <header class="header">
-      <nav class="logo">
-        <div class="logo">
-          <a href="index.html">
-            <img src="" alt="ManevArtLogo" />
+      <div class="logo">
+        <a href="index.html"><h1>ManeVArt</h1> </a>
+      </div>
+      <nav>
+        <div class="dropdown">
+          <button class="dropbtn">Menu<i class="fas fa-caret-down"></i></button>
+          <div class="dropdown-content">
+            <a href="about.html">About</a>
+            <a href="portraits.html">Portrait</a>
+            <a href="landscapes.html">Landscapes</a>
+          </div>
+        </div>
+      </nav>
+      <div class="header-right">
+        <div class="cart">
+          <a href="cart.html"
+            ><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span>
           </a>
         </div>
-        <div class="nav-toggle" id="navToggle">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="auth-container" id="auth-container">
+          <a href="#" id="login-btn">Login</a>
+          <a href="#" id="Register-btn">Register</a>
         </div>
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="portraits.html" class="nav-link">Portraits</a></li>
-          <li><a href="landscapes.html" class="nav-link">Landscapes</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li>
-            <a href="cart.html" class="cart-icon">
-              <i class="fas fa-shopping-cart"></i>
-              <span class="cart-count">0</span>
-            </a>
-          </li>
-          <li><a href="login.html" class="login-btn">Login</a></li>
-        </ul>
-      </nav>
+      </div>
     </header>
     <!--HeroSectionUpcoming-->
     <section class="hero">
       <div class="hero-content">
-        <h1 class="hero-title">Welcome to ManevArt</h1>
-        <p class="hero-subtitle">Discover my artworks that tell stories</p>
-        <div class="hero-cta">
-          <a href="#featured" class="btn btn-primary">Exlpore Gallery</a>
-          <a href="about.html" class="btn btn-secondary">Learn More</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="img/3.jpg" alt="Featured Painting" />
+        <h2>Welcome To ManeVArt</h2>
+        <p>Discover my artworks that tell stories</p>
+        <a href="#paintings" class="btn">Explore Gallery</a>
       </div>
     </section>
-    <!--Featured Paintings Section-->
-    <section id="featured" class="featured-paintings">
-      <h2 class="section-title">Featured Artworks</h2>
+    <!--Category Boxes-->
+    <section class="style-boxes">
+      <div class="container">
+        <a href="/landscapes.html" class="style-box landscapes">
+          <h3>Landscapes</h3>
+          <p>Explore beautiful scenery</p>
+        </a>
+        <a href="/portraits.html" class="style-box portraits">
+          <h3>People</h3>
+          <p>Discover amazing portraits</p>
+        </a>
+      </div>
+    </section>
+    <!--Paintings Section-->
+    <section id="paintings" class="paintings-section">
+      <h2 class="section-title">All Paintings</h2>
       <div class="paintings-grid">
         <!--Paintings will be dynamically inserted here-->
       </div>
     </section>
-    <!--Category Boxes-->
-    <section class="categories">
-      <div class="category-box portraits">
-        <img src="img/1.jpg" alt="Portraits" />
-        <div class="category-content">
-          <h3>Portraits</h3>
-          <p>Exlpore my collection of portraits</p>
-          <a href="portraits.html" class="btn btn-outline">View Collection</a>
-        </div>
-      </div>
-      <div class="category-box landscapes">
-        <img src="img/2.jpg" alt="Landscapes" />
-        <div class="category-content">
-          <h3>Landscapes</h3>
-          <p>Discover beautiful landscape paintings</p>
-          <a href="landscapes.html" class="btn btn-outline">View Collection</a>
-        </div>
-      </div>
-    </section>
+
     <!--Footer-->
     <footer class="footer">
       <div class="footer-content">

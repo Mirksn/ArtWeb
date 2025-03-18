@@ -25,54 +25,72 @@ body {
 }
 /*NavigationStyle*/
 .header {
-  position: fixed;
-  top: 0;
-  width: 100%;
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-.nav-container {
-  max-width: 1200px;
-  margin: 0auto;
-  padding: 1rem;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 5%;
 }
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
+.dropbtn {
+  background-color: #4a6fa5;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 4px;
+}
+
 /* Hero Section Styles */
 .hero {
-  height: 80vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/img/3.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
   display: flex;
   align-items: center;
-  padding: 2rem;
-  margin-top: 80px;
-  background: linear-gradient(to right, #fff 50%, var (--light-gray) 50%);
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
 }
 .hero-content {
-  flex: 1;
-  padding: 2rem;
+  max-width: 800px;
+  padding: 0 20px;
 }
-.hero-title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
-.hero-image {
-  flex: 1;
-  height: 100%;
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
+.hero .btn {
+  font-size: 1.1rem;
+  padding: 12px 30px;
 }
+
 /*Featured Paintings Grid*/
 .section-title {
   text-align: center;
@@ -95,48 +113,85 @@ body {
 .painting-card:hover {
   transform: translateY(-5x);
 }
-/*Category Boxes*/
-.categories {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  padding: 2rem;
+
+/*Style Boxes*/
+
+.style-boxes {
+  margin-bottom: 50px;
 }
-.category-box {
-  position: relative;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 10px;
+.style-boxes .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
-.category-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 2rem;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  pad: 0 15px;
+}
+.landscapes {
+  background-image: url(/img/2.jpg);
+}
+.portraits {
+  background-image: url(/img/1.jpg);
+}
+.style-box {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: white;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3 ease;
+  position: relative;
+  overflow: hidden;
+}
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 1em;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+}
+.style-box p {
+  position: relative;
+  z-index: 2;
+}
+.style-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
 }
 /*Buttons*/
+
 .btn {
   display: inline-block;
-  padding: 0.8 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.btn-primary {
-  background-color: var(--primary-color);
+  background-color: #4a6fa5;
   color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.btn-secondary {
-  background-color: var(--secondary-color);
-  color: white;
-}
-.btn-outline {
-  border: 2px solid white;
-  color: white;
-}
+
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr; /*Two equal column */
