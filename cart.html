@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- So we can use fas fa icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <meta name="description" content="" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:alt" content="" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <div class="logo">
+        <a href="index.html"><h1>ManeVArt</h1> </a>
+      </div>
+      <nav>
+        <div class="dropdown">
+          <button class="dropbtn" id="dropbtn">
+            Menu<i class="fas fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="dropdown-content">
+            <a href="about.html">About</a>
+            <a href="portraits.html">Portrait</a>
+            <a href="landscapes.html">Landscapes</a>
+          </div>
+        </div>
+      </nav>
+      <div class="header-right">
+        <div class="cart">
+          <a href="cart.html"
+            ><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span>
+          </a>
+        </div>
+        <div class="auth-container" id="auth-container">
+          <a href="#" id="login-btn">Login</a>
+          <a href="#" id="Register-btn">Register</a>
+        </div>
+      </div>
+      <script src="js/app.js"></script>
+    </header>
+    <!--CartSection-->
+    <section class="cart-section">
+      <div class="container">
+        <h1>Your Shopping Cart</h1>
+      </div>
+      <div class="cart-empty" id="cart-empty-message">
+        <p>
+          ==0$ "your cart is Empty"
+          <a href="L">Continue Shopping</a>
+        </p>
+      </div>
+      <div class="cart-content" id="cart-content">
+        <div class="cart-table-container">
+          <table class="cart-table">
+            <thead>
+              <th>Image</th>
+              <th>Paintings</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </thead>
+            <tbody id="cart-items">
+              <!-- Cart items will be loaded here via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+        <div class="cart-summary">
+          <div class="summary-item">
+            <span>Subtotal:</span>
+            <span id="cart-subtotal">$0.00</span>
+          </div>
+          <div class="summary-item">
+            <span>Shipping:</span>
+            <span id="cart-shipping">$0.00</span>
+          </div>
+          <div class="summary-item total">
+            <span>Total:</span>
+            <span id="cart-total">$0.00</span>
+          </div>
+          <button id="checkout-btn" class="btn checkout-btn">
+            Proceed To CheckOut
+          </button>
+        </div>
+      </div>
+    </section>
+    <!--Footer-->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Me</h3>
+          <p>
+            ManevArt is a way of showing the world unique artworks painted from
+            a self-thought painter
+          </p>
+        </div>
+        <div class="footer-section2">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">AboutMe</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy;2024 ManevArt Gallery. All rights reserved</p>
+      </div>
+    </footer>
+  </body>
+</html>
