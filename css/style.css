@@ -2,7 +2,7 @@
   /* put in the constant colors */
   --primary-color: #2c3e50;
   --secondary-color: #e74c3c;
-  --accent-color: #3498db;
+  --accent-color: #4a6fa5;
   --background-color: #f5f6fa;
   --text-color: #2c3e50;
   --light-gray: #ecf0f1;
@@ -37,9 +37,15 @@ body {
   align-items: center;
   padding: 15px 5%;
 }
+.header .logo h1 {
+  color: var(--accent-color);
+}
 .header-right {
   display: flex;
   align-items: center;
+}
+.auth-container #login-btn {
+  color: var(--accent-color);
 }
 .cart {
   margin-right: 20px;
@@ -54,7 +60,7 @@ body {
   display: inline-block;
 }
 .dropbtn {
-  background-color: #4a6fa5;
+  background-color: var(--accent-color);
   color: white;
   padding: 10px 15px;
   font-size: 16px;
