@@ -144,6 +144,9 @@ a {
 }
 
 /*Featured Paintings Grid*/
+.paintings-section .section-title {
+  color: var(--accent-color);
+}
 .section-title {
   text-align: center;
   font-size: 32px;
