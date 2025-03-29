@@ -1,19 +1,12 @@
-// Избиране на елемента с клас 'hero'
-const heroElement = document.querySelector('.hero');
+const heroElement = document.querySelector(".hero");
 
-// Масив с изображенията
-const images = [
-  '3.jpg',
-  'bmw.jpg',
-  'cigular.jpg'
-];
+const images = ["/img/3.jpg", "/img/bmw.jpg", "/img/cigular.jpg"];
 
-// Променяне на фоновото изображение
 let currentImageIndex = 0;
 function changeBackground() {
-  heroElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('${images[currentImageIndex]}')`;
-  currentImageIndex = (currentImageIndex + 1) % images.length; // Обръща се след последното изображение
+  heroElement.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+
+  currentImageIndex = (currentImageIndex + 1) % images.length;
 }
 
-// Смяна на изображението на всеки 3 секунди
-setInterval(changeBackground, 3000);
+setInterval(changeBackground, 5000);

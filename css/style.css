@@ -94,8 +94,7 @@ a {
 
 /* Hero Section Styles */
 .hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/img/3.jpg");
+  background-image: url(/img/3.jpg);
   background-size: cover;
   background-position: center;
   height: 500px;
@@ -105,9 +104,10 @@ a {
   text-align: center;
   color: white;
   margin-bottom: 40px;
-  transition: opacity 1s ease-in-out;
   position: relative;
+  transition: background-image 1s ease-in-out;
 }
+
 .hero::after {
   content: "";
   position: absolute;
@@ -118,11 +118,11 @@ a {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
 }
 .hero-content {
   max-width: 800px;
   padding: 0 20px;
+  z-index: 1;
 }
 .hero h2 {
   font-size: 2.5rem;
