@@ -33,3 +33,13 @@ closeBtns.forEach((btn) => {
     registerModal.style.display = "none";
   });
 });
+
+//Close when click != on form
+window.addEventListener("click", function (e) {
+  if (e.target === loginModal) {
+    loginModal.style.display = "none";
+  }
+  if (e.target === registerModal) {
+    registerModal.style.display = "none";
+  }
+});
