@@ -1,0 +1,25 @@
+# Node modules (if using Firebase functions or npm)
+node_modules/
+npm-debug.log
+
+# Firebase configuration
+.firebase/
+firebase-debug.log
+firebase.json
+firestore.indexes.json
+firestore.rules
+
+# Environment variables (for keeping API keys safe)
+.env
+.env.local
+.env.production
+.env.development
+
+# VS Code settings (optional)
+.vscode/
+
+# Build artifacts (if using a frontend framework)
+dist/
+build/
+
+#Igonore Firebase

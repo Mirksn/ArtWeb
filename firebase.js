@@ -19,3 +19,31 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const db = getFirestore(app);
+const auth = getAuth(app);
+const storage = getStorage(app);
+
+// Export the Firebase services
+export {
+  db,
+  auth,
+  storage,
+  collection,
+  getDocs,
+  addDoc,
+  deleteDoc,
+  doc,
+  updateDoc,
+  getDoc,
+  setDoc,
+  query,
+  where,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  deleteObject,
+};
