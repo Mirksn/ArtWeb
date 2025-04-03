@@ -47,3 +47,32 @@ export {
   getDownloadURL,
   deleteObject,
 };
+
+// Register functionality
+const registerForm = document.getElementById("registerForm");
+if (registerForm) {
+  registerForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("registerEmail").value;
+    const password = document.getElementById("registerPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      alert("Registration successful!");
+      window.location.href = "login.html";
+    } catch (error) {
+      alert("Registration error: " + error.message);
+    }
+  });
+}
