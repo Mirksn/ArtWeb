@@ -2,7 +2,7 @@
   /* put in the constant colors */
   --primary-color: #2c3e50;
   --secondary-color: #e74c3c;
-  --accent-color: #3498db;
+  --accent-color: #4a6fa5;
   --background-color: #f5f6fa;
   --text-color: #2c3e50;
   --light-gray: #ecf0f1;
@@ -37,9 +37,15 @@ body {
   align-items: center;
   padding: 15px 5%;
 }
+.header .logo h1 {
+  color: var(--accent-color);
+}
 .header-right {
   display: flex;
   align-items: center;
+}
+.auth-container #login-btn {
+  color: var(--accent-color);
 }
 .cart {
   margin-right: 20px;
@@ -54,7 +60,7 @@ body {
   display: inline-block;
 }
 .dropbtn {
-  background-color: #4a6fa5;
+  background-color: var(--accent-color);
   color: white;
   padding: 10px 15px;
   font-size: 16px;
@@ -94,8 +100,7 @@ a {
 
 /* Hero Section Styles */
 .hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/img/3.jpg");
+  background-image: url(/img/3.jpg);
   background-size: cover;
   background-position: center;
   height: 500px;
@@ -105,10 +110,25 @@ a {
   text-align: center;
   color: white;
   margin-bottom: 40px;
+  position: relative;
+  transition: background-image 1s ease-in-out;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
 }
 .hero-content {
   max-width: 800px;
   padding: 0 20px;
+  z-index: 1;
 }
 .hero h2 {
   font-size: 2.5rem;
@@ -124,6 +144,9 @@ a {
 }
 
 /*Featured Paintings Grid*/
+.paintings-section .section-title {
+  color: var(--accent-color);
+}
 .section-title {
   text-align: center;
   font-size: 32px;
@@ -224,6 +247,61 @@ p {
   transition: background-color 0.3s ease;
 }
 
+/* Modal Styles */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
 /*Footer*/
 
 .footer {
@@ -287,4 +365,15 @@ p {
   .nav-toggle {
     display: block;
   }
+}
+
+/* Target Autofill */
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: light-dark(
+    rgb(232, 240, 254),
+    rgba(70, 90, 126, 0.4)
+  ) !important;
+  color: fieldtext !important;
 }
