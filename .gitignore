@@ -8,6 +8,7 @@ firebase-debug.log
 firebase.json
 firestore.indexes.json
 firestore.rules
+firebase.js
 
 # Environment variables (for keeping API keys safe)
 .env

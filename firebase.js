@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+// This is optional-tracking user events(page views,sessions, etc.)
 import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,28 +25,10 @@ const auth = getAuth(app);
 const storage = getStorage(app);
 
 // Export the Firebase services
+//prettier-ignore
 export {
-  db,
-  auth,
-  storage,
-  collection,
-  getDocs,
-  addDoc,
-  deleteDoc,
-  doc,
-  updateDoc,
-  getDoc,
-  setDoc,
-  query,
-  where,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged,
-  ref,
-  uploadBytes,
-  getDownloadURL,
-  deleteObject,
+  db,auth,storage,collection,getDocs,addDoc,deleteDoc,doc,updateDoc,getDoc,
+  setDoc,query,where,signInWithEmailAndPassword,createUserWithEmailAndPassword,signOut,onAuthStateChanged,ref,uploadBytes,getDownloadURL,deleteObject,
 };
 
 // Register functionality
