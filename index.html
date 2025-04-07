@@ -93,11 +93,11 @@
         <form id="login-form">
           <div class="form-group">
             <label for="email">Email: </label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="log-email" name="email" required />
           </div>
           <div class="form-group">
             <label for="password">Password: </label>
-            <input type="password" is="password" name="password" required />
+            <input type="password" id="log-password" name="password" required />
           </div>
           <button type="submit" class="btn">Login</button>
         </form>
@@ -112,13 +112,23 @@
         <form id="register-form">
           <div class="form-group">
             <label for="reg-name">Username: </label>
-            <input type="text" id="reg-name" name="reg-name"
-            placeholder="Cool Nickname maybe? :D" required />
+            <input
+              type="text"
+              id="reg-name"
+              name="reg-name"
+              placeholder="Cool Nickname maybe? :D"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="reg-email">Email: </label>
-            <input type="email" id="reg-email" name="reg-email"
-            placeholder="example@email.com" required />
+            <input
+              type="email"
+              id="reg-email"
+              name="reg-email"
+              placeholder="example@email.com"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="reg-password">Password: </label>
@@ -174,6 +184,6 @@
     <script src="js/heroTransition.js"></script>
     <script src="js/app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js"></script>
-    <scriot src="js/firebase.js"></script>
+    <script src="js/firebase.js"></script>
   </body>
 </html>
