@@ -10,7 +10,7 @@ import {
 } from "./firebase.js";
 
 // Register functionality
-const registerForm = document.getElementById("registerForm");
+const registerForm = document.getElementById("register-form");
 if (registerForm) {
   //async means this is a asynchronous func-inside it we can use await to pause the code untill 'promises' finish
   registerForm.addEventListener("submit", async (e) => {

@@ -7,7 +7,7 @@ import {
 } from "./firebase.js";
 // Import the Firebase services you need
 
-const loginForm = document.getElementById("loginForm");
+const loginForm = document.getElementById("login-form");
 
 if (loginForm) {
   loginForm.addEventListener("submit", async (e) => {
