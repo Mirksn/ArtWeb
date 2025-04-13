@@ -18,11 +18,12 @@ if (registerForm) {
     //I used preventDefaut multiple times-it stops the defaut actions
     //It stops the form from reloading the page or sending a regular HTTP request
 
-    const name = document.getElementById("reg-name").value;
     const email = document.getElementById("reg-email").value;
     const password = document.getElementById("reg-password").value;
     const confirmPassword = document.getElementById("confirm-password").value;
+    const name = document.getElementById("reg-name").value;
 
+    //Password Match Check
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
