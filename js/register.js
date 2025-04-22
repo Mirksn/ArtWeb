@@ -43,7 +43,7 @@ if (registerForm) {
       //userCredential is an object that contains information about the newly created user
       const uid = userCredential.user.uid;
       alert("Registration successful!");
-      window.location.href = "login.html";
+      window.location.href = "index.html";
 
       // Store user data in Firestore
       await setDoc(doc(db, "users", uid), {
