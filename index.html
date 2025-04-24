@@ -10,9 +10,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <meta name="description" content="" />
-
-    <meta property="og:title" content="" />
+    <meta
+      name="description"
+      content="ManeVArt Gallery Website, showcasing unique artworks"
+    />
+    <meta
+      name="keywords"
+      content="manev, manevart, art, gallery, paintings, landscapes, portraits"
+    />
+    <meta property="og:title" content="ManeVArt" />
     <meta property="og:type" content="" />
     <meta property="og:url" content="" />
     <meta property="og:image" content="" />
@@ -88,39 +94,69 @@
     <!-- Login Modal -->
     <div id="login-modal" class="modal">
       <div class="modal-content">
-        <!-- & used for "emojis?/icons?" -->
         <span class="close">&times;</span>
         <h2>Login</h2>
-        <form action="" id="login-form">
+        <form id="login-form">
           <div class="form-group">
-            <label for="username">Email: </label>
-            <input type="email" id="username" name="username" required />
+            <label for="email">Email: </label>
+            <input type="email" id="log-email" name="email" required />
           </div>
           <div class="form-group">
             <label for="password">Password: </label>
-            <input type="password" is="password" name="password" required />
+            <input type="password" id="log-password" name="password" required />
           </div>
           <button type="submit" class="btn">Login</button>
         </form>
       </div>
     </div>
+
     <!-- Register Modal -->
     <div class="modal" id="register-modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Register</h2>
-        <form action="" id="register-form">
+        <form method="post" id="register-form">
           <div class="form-group">
-            <label for="reg-username">Username: </label>
-            <input type="text" id="reg-username" name="reg-username" required />
+            <label for="reg-name">Username: </label>
+            <input
+              type="text"
+              id="reg-name"
+              name="reg-name"
+              placeholder="Cool Nickname maybe? :D"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="reg-email">Email: </label>
-            <input type="text" id="reg-email" name="reg-email" required />
+            <input
+              type="email"
+              id="reg-email"
+              name="reg-email"
+              placeholder="example@email.com"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="reg-password">Password: </label>
-            <input type="text" id="reg-password" name="reg-password" required />
+            <input
+              type="password"
+              id="reg-password"
+              name="reg-password"
+              placeholder="At least 6 characters"
+              minlength="6"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password: </label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              placeholder="Must be same as above"
+              minlength="6"
+              required
+            />
           </div>
           <button type="submit" class="btn" id="regSubmit">Registers</button>
         </form>
@@ -153,6 +189,10 @@
     </footer>
     <script src="js/heroTransition.js"></script>
     <script src="js/app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js"></script>
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/login.js"></script>
+    <script type="module" src="js/register.js"></script>
+    <!-- <script src="js/cart.js"></script>
+    <script src="js/paintings.js"></script> -->
   </body>
 </html>
