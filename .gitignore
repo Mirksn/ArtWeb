@@ -5,7 +5,6 @@ npm-debug.log
 # Firebase configuration
 .firebase/
 firebase-debug.log
-firebase.json
 firestore.indexes.json
 firestore.rules
 firebase.js
