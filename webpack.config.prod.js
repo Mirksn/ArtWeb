@@ -23,7 +23,7 @@ module.exports = merge(common, {
         { from: "js", to: "js" },
 
         // Images
-        { from: "src/img", to: "img" },
+        { from: "src/img", to: "src/img" },
 
         // Other assets
         { from: "icon.svg", to: "icon.svg" },
