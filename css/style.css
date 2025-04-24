@@ -100,7 +100,7 @@ a {
 
 /* Hero Section Styles */
 .hero {
-  background-image: url(/img/3.jpg);
+  background-image: url(/src/img/3.jpg);
   background-size: cover;
   background-position: center;
   height: 500px;
@@ -186,10 +186,10 @@ a {
   pad: 0 15px;
 }
 .landscapes {
-  background-image: url(/img/2.jpg);
+  background-image: url(/src/img/2.jpg);
 }
 .portraits {
-  background-image: url(/img/1.jpg);
+  background-image: url(/src/img/1.jpg);
 }
 .style-box {
   flex: 1;

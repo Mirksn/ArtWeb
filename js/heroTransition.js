@@ -1,6 +1,6 @@
 const heroElement = document.querySelector(".hero");
 
-const images = ["/img/3.jpg", "/img/bmw.jpg", "/img/cigular.jpg"];
+const images = ["/src/img/3.jpg", "/src/img/bmw.jpg", "/src/img/cigular.jpg"];
 
 let currentImageIndex = 0;
 function changeBackground() {
