@@ -12,7 +12,6 @@ module.exports = merge(common, {
     new CopyPlugin({
       patterns: [
         // HTML pages
-        { from: "index.html", to: "index.html" },
         { from: "about.html", to: "about.html" },
         { from: "admin.html", to: "admin.html" },
         { from: "cart.html", to: "cart.html" },
