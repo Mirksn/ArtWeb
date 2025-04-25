@@ -42,8 +42,6 @@ if (registerForm) {
       //we get the UID of the user from the userCredential object
       //userCredential is an object that contains information about the newly created user
       const uid = userCredential.user.uid;
-      alert("Registration successful!");
-      window.location.href = "index.html";
 
       // Store user data in Firestore
       await setDoc(doc(db, "users", uid), {
@@ -53,6 +51,9 @@ if (registerForm) {
         admin: false, // Set admin to false by default
         createdAt: new Date(), // Store the creation date
       });
+
+      alert("Registration successful!");
+      window.location.href = "index.html";
     } catch (error) {
       alert("Registration error: " + error.message);
 
