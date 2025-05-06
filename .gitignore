@@ -21,5 +21,3 @@ firebase.js
 # Build artifacts (if using a frontend framework)
 dist/
 build/
-
-#Igonore Firebase

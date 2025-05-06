@@ -1,52 +1,33 @@
-import {
-  auth,
-  signInWithEmailAndPassword,
-  db,
-  doc,
-  getDoc,
-} from "./firebase.js";
-// Import the Firebase services you need
+import { auth, db } from "./firebase.js";
+import { signInWithEmailAndPassword, getDoc, doc } from "firebase/auth";
 
 const loginForm = document.getElementById("login-form");
 
 if (loginForm) {
-  loginForm.addEventListener("submit", async (e) => {
+  loginForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const email = document.getElementById("log-email").value;
     const password = document.getElementById("log-password").value;
 
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const user = userCredential.user;
-
-      //Fetch the user's Firestore profile
-      const userDocRef = doc(db, "users", user.uid);
-      const userDocSnap = await getDoc(userDocRef);
-
-      if (userDocSnap.exists()) {
-        const userData = userDocSnap.data();
-
-        if (userData.admin === true) {
-          // Redirect to admin page
+      const cred = await signInWithEmailAndPassword(auth, email, password);
+      const snap = await getDoc(doc(db, "users", cred.user.uid));
+      if (snap.exists()) {
+        const data = snap.data();
+        if (data.isAdmin) {
           alert("Welcome Admin!");
-          window.location.href = "admin.html";
+          window.location.href = "/admin.html";
         } else {
-          // Normal User
           alert("Login successful!");
-          window.location.href = "index.html";
+          window.location.href = "/";
         }
       } else {
-        // User not found
         alert("User not found. Please register.");
       }
-    } catch (error) {
-      console.error("Login error:", error.message);
-      alert("Login failed: " + error.message);
+    } catch (err) {
+      console.error("Login error:", err);
+      alert("Login failed: " + err.message);
     }
   });
 }

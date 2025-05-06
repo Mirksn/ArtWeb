@@ -1,65 +1,53 @@
 // This file contains the code for the register module.
+
 // Import the Firebase services
-import {
-  auth,
-  db,
-  setDoc,
-  doc,
-  createUserWithEmailAndPassword,
-  getDoc,
-} from "./firebase.js";
 
-// Register functionality
+import { setDoc, doc } from "firebase/firestore";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "./firebase.js"; // Adjust the import path as necessary
+
 const registerForm = document.getElementById("register-form");
-if (registerForm) {
-  //async means this is a asynchronous func-inside it we can use await to pause the code untill 'promises' finish
-  registerForm.addEventListener("submit", async (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
-    //I used preventDefaut multiple times-it stops the defaut actions
-    //It stops the form from reloading the page or sending a regular HTTP request
+const errorEl = document.getElementById("password-error");
+const passEl = document.getElementById("reg-password");
+const confirmEl = document.getElementById("confirm-password");
 
-    const email = document.getElementById("reg-email").value;
-    const password = document.getElementById("reg-password").value;
-    const confirmPassword = document.getElementById("confirm-password").value;
-    const name = document.getElementById("reg-name").value;
+window.validatePasswordMatch = () => {
+  if (confirmEl.value !== passEl.value) {
+    confirmEl.setCustomValidity("Passwords do not match.");
+    errorEl.style.display = "inline";
+  } else {
+    confirmEl.setCustomValidity("");
+    errorEl.style.display = "none";
+  }
+};
 
-    //Password Match Check
-    if (password !== confirmPassword) {
-      alert("Passwords do not match");
-      return;
-    }
-    if (auth.currentUser) {
-      alert("You are already logged in. Please log out first.");
-      return;
-    }
+registerForm?.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      //we get the UID of the user from the userCredential object
-      //userCredential is an object that contains information about the newly created user
-      const uid = userCredential.user.uid;
+  //must re-run in case user never typed into confirm field
+  validatePasswordMatch();
+  if (!registerForm.checkValidity()) return; //if the form is invalid, do not submit
 
-      // Store user data in Firestore
-      await setDoc(doc(db, "users", uid), {
-        uid: uid,
-        name: name,
-        email: email,
-        admin: false, // Set admin to false by default
-        createdAt: new Date(), // Store the creation date
-      });
+  const name = document.getElementById("reg-name").value;
+  const email = document.getElementById("reg-email").value;
+  const password = passEl.value.trim();
 
-      alert("Registration successful!");
-      window.location.href = "index.html";
-    } catch (error) {
-      alert("Registration error: " + error.message);
-
-      if (error.code === "auth/email-already-in-use") {
-        alert("Email already in use. Please use a different email.");
-      }
-    }
-  });
-}
+  try {
+    const { user } = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    await setDoc(doc(db, "users", user.uid), {
+      uid: user.uid,
+      name: name,
+      email: email,
+      isAdmin: false,
+      createdAt: new Date(),
+    });
+    alert("Registration successful! You can now log in.");
+    window.location.href = "index.html";
+  } catch (error) {
+    alert("Registration error: " + error.message);
+  }
+});
