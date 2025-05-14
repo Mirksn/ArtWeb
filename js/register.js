@@ -10,6 +10,7 @@ const registerForm = document.getElementById("register-form");
 const errorEl = document.getElementById("password-error");
 const passEl = document.getElementById("reg-password");
 const confirmEl = document.getElementById("confirm-password");
+const regSubmitEl = document.getElementById("regSubmit");
 
 window.validatePasswordMatch = () => {
   if (confirmEl.value !== passEl.value) {
@@ -28,6 +29,9 @@ registerForm?.addEventListener("submit", async (e) => {
   validatePasswordMatch();
   if (!registerForm.checkValidity()) return; //if the form is invalid, do not submit
 
+  regSubmitEl.disabled = true; // Disable the submit button to prevent multiple submissions
+  regSubmitEl.textContent = "Registering..."; // Change button text to indicate registration in progress
+
   const name = document.getElementById("reg-name").value;
   const email = document.getElementById("reg-email").value;
   const password = passEl.value.trim();
@@ -38,16 +42,22 @@ registerForm?.addEventListener("submit", async (e) => {
       email,
       password
     );
+    console.log("User created: ", user);
     await setDoc(doc(db, "users", user.uid), {
       uid: user.uid,
-      name: name,
+      username: name,
       email: email,
       isAdmin: false,
       createdAt: new Date(),
     });
+    console.log("User document created in Firestore: ", user.uid);
     alert("Registration successful! You can now log in.");
     window.location.href = "index.html";
   } catch (error) {
+    console.error("Registration error object: ", error);
     alert("Registration error: " + error.message);
+
+    regSubmitEl.disabled = false; // Re-enable the submit button
+    regSubmitEl.textContent = "Register"; // Reset button text
   }
 });
