@@ -20,7 +20,7 @@ A dynamic art gallery website showcasing artwork collections with admin capabili
 
 ## Live Demo
 
-[View Live Demo](netlify-url-here)
+[View Live Demo](https://manevartupdate.web.app/index.html)
 
 ## Screenshots
 
