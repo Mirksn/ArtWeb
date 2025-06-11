@@ -58,6 +58,6 @@ registerForm?.addEventListener("submit", async (e) => {
     alert("Registration error: " + error.message);
 
     regSubmitEl.disabled = false; // Re-enable the submit button
-    regSubmitEl.textContent = "Register"; // Reset button text
+    regSubmitEl.textContent = "Register"; // Reset button text.
   }
 });
