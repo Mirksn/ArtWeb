@@ -8,6 +8,7 @@ import { auth, db } from "./firebase.js";
 import { serverTimestamp } from "firebase/firestore"; // Import serverTimestamp for Firestore
 
 document.addEventListener("DOMContentLoaded", function () {
+  let isSubmitting = false; // Initialize a flag to prevent multiple submissions
   const registerForm = document.getElementById("register-form");
   const errorEl = document.getElementById("password-error");
   const passEl = document.getElementById("reg-password");
@@ -27,12 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
   registerForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    if (isSubmitting) return; // Prevent multiple submissions
+    isSubmitting = true; // Set the flag to true to prevent further submissions
+    regSubmitEl.disabled = true; // Disable the submit button to prevent multiple submissions
+    regSubmitEl.textContent = "Registering..."; // Change button text to indicate registration in progress
+
     //must re-run in case user never typed into confirm field
     validatePasswordMatch();
     if (!registerForm.checkValidity()) return; //if the form is invalid, do not submit
-
-    regSubmitEl.disabled = true; // Disable the submit button to prevent multiple submissions
-    regSubmitEl.textContent = "Registering..."; // Change button text to indicate registration in progress
 
     const name = document.getElementById("reg-name").value;
     const email = document.getElementById("reg-email").value;
@@ -59,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Registration error object: ", error);
       alert("Registration error: " + error.message);
 
+      isSubmitting = false; // Reset the flag to allow future submissions
       regSubmitEl.disabled = false; // Re-enable the submit button
       regSubmitEl.textContent = "Register"; // Reset button text.
     }
