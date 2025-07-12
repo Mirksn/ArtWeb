@@ -4,3 +4,4 @@ import "./heroTransition.js";
 import "./app.js";
 import "./login.js";
 import "./register.js";
+import "./authUI.js";
